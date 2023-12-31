@@ -53,6 +53,9 @@
     mymap.has(3)
 
     console.log(mymap.size); // 2 because we deleted 2nd element
+    
+    // instanceof
+    console.log(mymap instanceof Map); // return true
 
     {
         /**
