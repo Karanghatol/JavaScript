@@ -1,0 +1,28 @@
+{
+    "name": "karan",
+    "age": 20,
+    "address": {
+        "city": "Sambhajinagar"
+    },
+    "friends": [
+        "bhushan",
+        "shubham",
+        "nikhil",
+        "ajay"
+    ],
+    "onInsta": true,
+
+    "handeling": "nested objcts",
+    "A": {
+        "B": {
+            "C": {
+                "last": {
+                    "greet": "hello bro"
+                }
+            }
+        },
+        "D": {
+            "empty": ""
+        }
+    }
+}

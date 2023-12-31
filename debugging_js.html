@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>let's see an example of debugging</h1>
+    <br />
+
+    multiplicaation of 10 * 5: <br />
+    <p id="mul"></p>
+    <script>
+      const x = 10;
+      const y = "5";
+      debugger;
+      document.write(x * y);
+      {
+        /**
+         * debugging in js is used to solve or find bugs/errors in the code
+         *
+         * errors can appear because of syntax error or logic
+         */
+        // we use debugger; keyword to find errors
+        // debugger stops the execution
+        /**
+         * Using debugger keyword: The debugger keyword is used in the code to force stop the execution
+         * of the code at a breaking point and calls the debugging function.
+         * The debugger function is executed if any debugging is needed at all else no action is performed.
+         */
+
+         /**
+          * debugger stops the execution when an error occurs
+          */
+      }
+
+      {
+        let arr = Array([10, 20], ["a"]);
+        debugger;
+        for (const k in arr) {
+        //   if (Object.hasOwnProperty.call(arr, k)) {
+            document.write(arr[k]);
+        //   }
+        }
+      }
+    </script>
+  </body>
+</html>

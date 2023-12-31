@@ -13,7 +13,7 @@
         map.set('two', 2)
         map.set(true, false)
         map.set('variable', x)  // varianble x
-        map.set({ key: 10.2 }, [10, 20])
+        map.set({key: 10.2 }, [10, 20])
         console.log(map);
     }
     console.log('\n');
