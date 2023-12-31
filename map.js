@@ -43,4 +43,32 @@
 
     console.log(map);
 
+    let mymap = new Map()
+    mymap.set(1, "karan")
+    mymap.set(2, "arjun")
+    mymap.set(3, "krishna")
+
+    mymap.get(1)
+    mymap.delete(2)
+    mymap.has(3)
+
+    console.log(mymap.size); // 2 because we deleted 2nd element
+
+    {
+        /**
+        new Map()	Creates a new Map object
+        set()	    Sets the value for a key in a Map
+        get()	    Gets the value for a key in a Map
+        clear()	    Removes all the elements from a Map
+        delete()	Removes a Map element specified by a key
+        has()	    Returns true if a key exists in a Map
+        forEach()	Invokes a callback for each key/value pair in a Map
+        entries()	Returns an iterator object with the [key, value] pairs in a Map
+        keys()	    Returns an iterator object with the keys in a Map
+        values()	Returns an iterator object of the values in a Map
+            
+        size	    Returns the number of Map elements
+         */
+    }
+
 }
