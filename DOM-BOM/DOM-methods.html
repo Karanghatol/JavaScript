@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <h4>
+      let's see an example of changing context of the element by using it's ID
+      using button :
+    </h4>
+    <br />
+
+    <p id="demo">this is p tag</p>
+    <button id="btn" onclick="change()">Button</button>
+
+    <script>
+      function change() {
+        document.getElementById("demo").innerHTML =
+          "here is changed value of p ";
+      }
+      //   getElementById is a method, while innerHTML is a property.
+      //   The innerHTML property can be used to get or change any HTML element,
+      //   including <html> and <body>.
+
+    </script>
+  </body>
+</html>

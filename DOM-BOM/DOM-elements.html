@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div id="main">
+        <p>first element P</p>
+        <section name="sec">second element SECTION</section>
+        <main class="third">third element main</section>
+    </div>
+
+    <h3 id="print"></h3>
+
+    <script>
+        let d = document.getElementById('main');
+        let p = d.getElementsByTagName('p');
+        let s = document.getElementsByName('sec');
+        let m = d.getElementsByClassName('third');
+
+document.getElementById('print').innerHTML = p[0].innerHTML;
+    </script>
+</body>
+</html>
