@@ -3,63 +3,146 @@
   <head> </head>
   <body>
     <p id="p1"></p>
-    <button id="demo2" onclick="hello()">button</button>
+    <p class="p1"></p>
+    <img src="" alt="" />
+    <main name="name">hello this is main in <b>style</b></main>
+    <button id="btn">button</button>
+
+    <div id="first">
+      <div id="second">this is second div</div>
+    </div>
+
+    <!-------------------------------   script started    ------------------------>
     <script>
       /**
        * here are some dom-methods
-       * Document Object Methods:
+       * Document Object Methods: -----------------------------------
        * */
 
       // : Gets an element by its ID.
-      getElementById("id");
+      let element = document.getElementById("p1");
+      let btn = document.getElementById("btn");
       // : Gets a collection of elements with the given class name.
-      getElementsByClassName("className");
+      document.getElementsByClassName("p1");
       // : Gets a collection of elements with the given tag name.
-      getElementsByTagName("tagName");
+      let myimg = document.getElementsByTagName("img");
       // : Gets a collection of elements with the given name attribute.
-      getElementsByName("name");
+      let name = document.getElementsByName("name");
 
-      //       Changing HTML Elements
+      //       Changing HTML Elements    ------------------------
       // Property	Description :
       // content // Change the inner HTML of an element
-      element.innerHTML = new html();
+      element.innerHTML = "hello new html";
+
       // Change the attribute value of an HTML element
-      element.attribute = new value();
+      // element.attribute = new value();
+      myimg.src = "C:/Users/lenovo/Downloads/pass-karan.jpg";
+
       // Change the style of an HTML element
-      element.style.property = new style();
-      // Method	Description :
+      // element.style.property = new style();
+      element.style.color = "magenta";
+
+      // Method	Description -------------------------------:
+
       // Change the attribute value of an HTML element
-      element.setAttribute(attribute, value);
+      // element.setAttribute(attribute, value);
+      btn.setAttribute("onclick", "hello()");
 
-      //       Adding and Deleting Elements
+      //       Adding and Deleting Elements     ------------------------
       // Method	Description
-      document.createElement(element); // Create an HTML element
-      document.removeChild(element); // Remove an HTML element
-      document.appendChild(element); // Add an HTML element
-      document.replaceChild(/* new, old*/); // Replace an HTML element
-      document.write(text); // Write into the HTML output stream
 
-      //   Adding Events Handlers
+      // Create an HTML element
+      // document.createElement(element);
+      let newSec = document.createElement("div");
+      newSec.id = "newsec";
+      newSec.innerHTML = "hello i'm new main creeated by js";
+      newSec.style.backgroundColor = "lightblue";
+      newSec.style.padding = "10px";
+      document.body.appendChild(newSec);
+
+      // Remove an HTML element
+      // document.removeChild(element);
+      let first = document.getElementById("first");
+      let second = document.getElementById("second");
+      first.removeChild(second);
+      // also
+      second.remove();
+      // removing from body
+      // document.body.first.remove();
+
+      // Add an HTML element
+      // document.appendChild(element);
+      let create_parent_p = document.createElement("p");
+      create_parent_p.textContent = "this is paragraph that content div";
+      let create_child_div = document.createElement("div");
+      create_child_div.textContent = "this is div inside paragaraph";
+      create_parent_p.appendChild(create_child_div);
+
+      // Replace an HTML element
+      let old = document.createElement("div");
+      document.body.appendChild(old);
+      let new_child1 = document.createElement("p");
+      old.appendChild(new_child1);
+      let new_child2 = document.createElement("p");
+      old.appendChild(new_child2);
+      old.replaceChild(new_child1, new_child2);
+
+      // Write into the HTML output stream
+      document.write("writing text on document using <b>document.write</b>");
+
+      //   Adding Events Handlers   ------------------------------
       // Method	Description
-      document.getElementById("demo2").onclick = function hello() {
-        document.getElementById("p1").innerHTML = "hello button";
-      };
+      document.getElementById("btn").onClick = document.getElementById(
+        "p1"
+      ).innerHTML = "hello button Clicked";
+    </script>
+    <br /><br />
+    ----------------------//-------------------------//
+    -------------------//------------------
+    <br />
+    <h6>
+      Finding HTML Objects The first HTML DOM Level 1 (1998), defined 11 HTML
+      objects, object collections, and properties
+    </h6>
 
-      /** Finding HTML Objects
-      The first HTML DOM Level 1 (1998), defined 11 HTML objects, object collections, 
-      and properties. These are still valid in HTML5.
+    <a href="dom.png">image link</a>
+    <a href="DOM-intro.html">dome intro page link</a>
+
+    <applet>applet one</applet>
+    <applet>applet two</applet>
+
+    <script>
+      /*These are still valid in HTML5.
       Later, in HTML DOM Level 3, more objects, collections, and properties were added. */
 
-      // Property	Description	DOM : 
-      
+      // Property	Description	DOM :
+
       //	Returns all <a> elements that have a name attribute	1
-      document.anchors;
+      // Get the collection of anchor elements in the document
+      var anchorCollection = document.anchors;
+      // Iterate through the collection and perform some actions
+      for (var i = 0; i < anchorCollection.length; i++) {
+        var currentAnchor = anchorCollection[i];
+        document.write("Anchor #" + i + ": " + currentAnchor.href);
+        // Perform other actions with the current anchor element
+      }
+
       //	Deprecated	1
       document.applets;
+      var appletsCollection = document.applets;
+      // Log the number of applet elements
+      console.log("Number of applet elements: " + appletsCollection.length);
+      // Iterate through the collection and perform actions
+      for (var i = 0; i < appletsCollection.length; i++) {
+        var currentApplet = appletsCollection[i];
+        console.log("Applet #" + (i + 1) + " - code: " + currentApplet.code);
+        // Perform other actions with the current applet element
+      }
+
       //	Returns the absolute base URI of the document	3
       document.baseURI;
       //	Returns the <body> element	1
-      document.body;
+      document.body.style.backgroundColor = "green";
       //	Returns the document's cookie	1
       document.cookie;
       //	Returns the document's doctype	3
