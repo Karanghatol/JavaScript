@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <style></style>
+  <body>
+    <p id="cool">click the button to change rotation</p>
+    <button
+      type="submit"
+      onclick="
+        document.getElementById('cool').style.transform = 'rotate(-20deg)'
+      "
+    >
+      click me
+    </button>
+    <script>
+      document.getElementById('cool').style.cssText = 'background-color: navy;color :yellow;width: max-content;';
+    </script>
+  </body>
+</html>
