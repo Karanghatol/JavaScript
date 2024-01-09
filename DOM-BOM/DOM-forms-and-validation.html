@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form validation</title>
+  </head>
+  <style>
+    span {
+      color: red;
+    }
+    input:out-of-range {
+      color: red;
+    }
+  </style>
+  <body>
+    <h2>Form validation</h2>
+    <!-- disabled input -->
+    disabled : <input type="text" placeholder="disabled" disabled /><br /><br />
+    <!-- readonly input -->
+    readonly : <input type="text" placeholder="readonly" readonly /><br /><br />
+    <!-- maxlength input -->
+    maxlength :
+    <input
+      type="text"
+      placeholder="maxlength"
+      size="10"
+      maxlength="10"
+    /><br /><br />
+
+    <!-- need to give a name to form -->
+    <form action="" name="form1" onsubmit="return validate()">
+      <!-- pattern -->
+      Name : <input type="text" name="name" id="name" pattern="[A-Za-z]{3}" />
+      <br />
+      <span id="namee"></span><br />
+
+      <!-- automatic form validation using required  -->
+      email :<input type="text" name="email" id="email" required /> <br />
+      <span id="emaile"></span><br />
+
+      <!-- setting size 10 -->
+      phone : <input type="text" name="phone" id="phone" size="10" /><br />
+      <span id="phonee"></span><br />
+
+      <!-- input type date min max attribute -->
+      <input
+        type="date"
+        name=""
+        id=""
+        min="2000-01-12"
+        max="2004-08-27"
+      /><br /><br />
+
+      <!-- if num is 1 then next numbers will be five and next 10 ........ -->
+      <input type="number" name="" id="" min="1" max="3" step="5" /><br /><br />
+
+      <!-- accepting multiple values : 0 -->
+      <input type="file" name="" id="" multiple /> <br /><br />
+      <input type="submit" value="Submit" />
+
+      <div id="data"></div>
+    </form>
+    <script>
+      // we will use the onSubmit method in form tag
+      function validate() {
+        let name = document.forms["form1"]["name"].value;
+        let email = document.forms["form1"]["email"].value;
+        let phone = document.forms["form1"]["phone"].value;
+        let dataContainer = document.getElementById("data");
+
+        if (name === "") {
+          document.getElementById("namee").innerHTML = "enter name please";
+          return false;
+        } else if (email === "") {
+          document.getElementById("emaile").innerHTML = "enter email please";
+          return false;
+        } else if (!email.includes("@")) {
+          document.getElementById("emaile").innerHTML =
+            "enter a valid email address";
+          return false;
+        } else if (isNaN(phone) || phone.length != 10) {
+          /**
+               *
+              validating numaric input :
+              */
+          document.getElementById("phonee").innerHTML =
+            "enter valid phone please";
+          return false;
+        } else {
+          //   Display the data in the dataContainer
+          dataContainer.innerHTML = "Your data : <br />";
+          dataContainer.innerHTML += "Name: " + name + "<br />";
+          dataContainer.innerHTML += "Email: " + email + "<br />";
+          dataContainer.innerHTML += "Phone: " + phone + "<br />";
+
+          let namee = document.getElementById("namee");
+          let emaile = document.getElementById("emaile");
+          let phonee = document.getElementById("phonee");
+          namee.innerHTML = name;
+          emaile.innerHTML = email;
+          phonee.innerHTML = phone;
+          namee.style.color = "green";
+          emaile.style.color = "green";
+          phonee.style.color = "green";
+
+          return false; // Prevent form submission for this example
+          //-- make true for submission of data
+        }
+      }
+    </script>
+  </body>
+</html>
