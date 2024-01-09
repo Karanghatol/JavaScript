@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <img src="./demoimage.png" alt="" id="img" />
+    <p id="para"></p>
+    <script>
+      let para = document.getElementById("para");
+      para.innerHTML = "this is paragraph";
+
+      let image = document.getElementById("img");
+      image.alt = "this is image";
+    </script>
+
+    <br />
+    <h4>dynamic html content :</h4>
+    <br />
+<p id="date"></p>
+    <script>
+        let date = document.getElementById('date').innerHTML = 'Today\'s Date : ' + new Date();
+    </script>
+
+    <script>
+        document.write(Date())
+    </script>
+  </body>
+</html>
