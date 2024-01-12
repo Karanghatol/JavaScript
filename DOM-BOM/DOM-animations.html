@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <style>
+    .main {
+      width: 25rem;
+      height: 30rem;
+      position: relative;
+      background-color: green;
+    }
+    .box {
+      background-color: red;
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+    }
+
+    /* sec */
+
+    .animate {
+      color: #ffffff;
+      background-color: blueviolet;
+    }
+
+    /* third */
+    .animate2 {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+  </style>
+  <body>
+    <!-- lets ceate a page for demonstrate the animation -->
+    <p><button onclick="animat_()">Click here</button></p>
+    <div class="main">
+      <div class="box"></div>
+    </div>
+
+    <script>
+      function animat_() {
+        let pos = 0;
+        let elem = document.getElementsByClassName("box");
+        let id = null;
+
+        clearInterval(id);
+        id = setInterval(frame, 5);
+
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++;
+            elem.style.top = pos + "rem";
+            elem.style.left = pos + "rem";
+          }
+        }
+      }
+    </script>
+
+    <!-- 
+    we can add a css class to the perticular property by using classList attribute and add() method.
+ -->
+    classList and setTimeout:
+
+    <div id="animatedElement">Hello, World!</div>
+
+    <script>
+      const element = document.getElementById("animatedElement");
+
+      // Add 'animate' class after a delay (using setTimeout function)
+      setTimeout(() => {
+        element.classList.add("animate");
+      }, 3000);
+
+      // Use requestAnimationFrame for smoother animations
+      requestAnimationFrame(animate2);
+    </script>
+  </body>
+</html>
