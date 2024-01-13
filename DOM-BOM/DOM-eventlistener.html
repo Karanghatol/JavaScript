@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- addEventListener and removeEventListener 
+        element.--EventListener('event', handler, useCapture __> bydefault false);
+    -->
+
+    <!-- addEventListener -->
+    <button id="btn1">Check Status</button>
+    <p id="demo1"></p>
+
+    <script>
+      document.getElementById("btn1").addEventListener("click", isonline, false);
+      function isonline() {
+          if (navigator.onLine) {
+              document.getElementById("demo1").innerHTML = "<h1>ONLINE</h1>";
+            } else {
+                document.getElementById("demo1").innerHTML = "<h1>OFFLINE</h1>";
+            }
+        }
+        
+        //   removeEventListener 
+        document.getElementById("btn1").removeEventListener("click", isonline);
+        // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^Event listener removed^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    </script>
+  </body>
+</html>

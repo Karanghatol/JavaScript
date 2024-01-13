@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- 
+        a javascript can be executed when an event occurs, like clicking on the button, hover etc.
+     -->
+
+    example :
+    <h3 style="cursor: pointer" ondblclick="this.innerHTML = 'clicked'">
+      double click me
+    </h3>
+    <!-- lets same example in different way -->
+
+    <h2 onclick="change(this)">click once</h2>
+    <script>
+      function change(text) {
+        text.innerHTML = "clicked successfully";
+        text.style.color = "blue";
+        text.style.cursor = "pointer";
+      }
+    </script>
+
+    <!-- HTML Event Attributes -->
+    onclick : <button onclick="displayDate()">Try it</button>
+    <!-- by script -->
+    <script>
+      document.getElementById("myBtn").onclick = displayDate;
+    </script>
+
+    <!-- onload : when page is completed loading -->
+    <script>
+      function sey() {
+        alert("completed loading");
+      }
+      window.addEventListener("load", sey);
+    </script>
+
+    <!-- oninput :  -->
+    <br /><input type="text" name="name" id="name" oninput="upper()" /><br />
+    <script>
+      function upper() {
+        let inp = document.getElementById("name");
+        inp.value = inp.value.toUpperCase();
+      }
+    </script>
+
+    <!-- onchange : when we leave the input field then it will return the script -->
+    <br /><input type="text" name="name" id="name2" onchange="upperc()" /><br />
+    <script>
+      function upperc() {
+        let inp = document.getElementById("name2");
+        inp.value = inp.value.toUpperCase();
+      }
+    </script>
+
+    <!-- onmouseover and onmouseout : mouse events -->
+    <h4
+      onmouseover="this.innerHTML = 'take mouse out'"
+      onmouseout="this.innerHTML = 'take mouse over'"
+    >
+      take mouse over on ME
+    </h4>
+
+    <!-- mouseup/mousedown and mousemove -->
+    <h4
+      mouseup="this.innerHTML = 'mouse  UP '
+      mousedown="
+      this.innerHTML="mouse Down"
+    ></h4>
+
+    <!-- there are many more html DOM events -->
+    <!-- 
+          : HTML Events,
+          : abort,
+          : afterprint,
+          : animationend,
+          : animationiteration,
+          : animationstart,
+          : beforeprint,
+          : beforeunload,
+          : blur,
+          : canplay,
+          : canplaythrough,
+          : change,
+          : click,
+          : contextmenu,
+          : copy,
+          : cut,
+          : dblclick,
+          : drag,
+          : dragend,
+          : dragenter,
+          : dragleave,
+          : dragover,
+          : dragstart,
+          : drop,
+          : durationchange,
+          : ended,
+          : error,
+          : focus,
+          : focusin,
+          : focusout,
+          : fullscreenchange,
+          : fullscreenerror,
+          : hashchange,
+          : input,
+          : invalid,
+          : keydown,
+          : keypress,
+          : keyup,
+          : load,
+          : loadeddata,
+          : loadedmetadata,
+          : loadstart,
+          : message,
+          : mousedown,
+          : mouseenter,
+          : mouseleave,
+          : mousemove,
+          : mouseover,
+          : mouseout,
+          : mouseup,
+          : offline,
+          : online,
+          : open,
+          : pagehide,
+          : pageshow,
+          : paste,
+          : pause,
+          : play,
+          : playing,
+          : progress,
+          : ratechange,
+          : resize,
+          : reset,
+          : scroll,
+          : search,
+          : seeked,
+          : seeking,
+          : select,
+          : show,
+          : stalled,
+          : submit,
+          : suspend,
+          : timeupdate,
+          : toggle,
+          : touchcancel,
+          : touchend,
+          : touchmove,
+          : touchstart,
+          : transitionend,
+          : unload,
+          : volumechange,
+          : waiting,
+          : wheel,
+          : HTML Event Objects,
+          : HTML Event Properties,
+          : HTML Event Methods,
+
+     -->
+  </body>
+</html>
