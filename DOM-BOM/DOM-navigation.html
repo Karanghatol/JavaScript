@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Parent node (first child of document) -->
+  <!----
+        head and body are siblings of each other.
+        (beacause they both are childerens of html node).
+    ------->
+  <head>
+    <!-- first child node of html -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- fist child of head -->
+  </head>
+  <body>
+    <!--second child node of html -->
+    <!-- 
+          
+          everything in an HTML document is a node:
+          
+          The entire document is a document node
+          Every HTML element is an element node
+          The text inside HTML elements are text nodes
+          Every HTML attribute is an attribute node (deprecated)
+          All comments are comment nodes
+          
+          *<html> is the root node
+              <html> has no parents
+                  <html> is the parent of <head> and <body>
+                      <head> is the first child of <html>
+                          <body> is the last child of <html>
+                    -->
+
+    Body text :
+    <h2 id="node4">hello i am body text</h2>
+
+    The value of the text node can be accessed by the node's innerHTML property:
+    h1 :
+    <h1 id="node1">Hello Karan The Developer ☺</h1>
+    p :
+    <p id="copy"></p>
+    <br />
+
+    h1 :
+    <h1 id="node2">You are the best Developer</h1>
+
+    p :
+    <p id="copy2"></p>
+    <br />
+
+    h1 :
+    <h1 id="node3">You are most powerful ♥☻</h1>
+
+    p :
+    <p id="copy3"></p>
+    <br />
+
+    p body text :
+    <p id="copy4"></p>
+    <br />
+
+    <h3>hello documentElement</h3>
+    p documentElement text :
+    <p id="copy5"></p>
+    <br />
+
+    h1 :
+    <h1 id="node6">node 6th</h1>
+
+    p :
+    <p id="copy6"></p>
+    <br />
+
+    h1 :
+    <h1 id="node7">node 7th</h1>
+
+    p :
+    <p id="copy7"></p>
+    <br />
+
+    h1 :
+    <h1 id="node8">node 8th</h1>
+
+    p :
+    <p id="copy8"></p>
+    <script>
+      document.getElementById("copy").innerHTML =
+        document.getElementById("node1").innerHTML;
+
+      // firstChild
+      document.getElementById("copy2").innerHTML =
+        document.getElementById("node2").firstChild.nodeValue;
+
+      // childNode[0]
+      document.getElementById("copy3").innerHTML =
+        document.getElementById("node3").childNodes[0].nodeValue;
+
+      // document.body
+      //   document.getElementById("copy4").innerHTML = document.body.innerHTML;
+
+      //   documentElement
+      document.getElementById("copy5").innerHTML =
+        document.documentElement[0].innerHTML;
+
+      //   nodeName ex : h1, p, a, section, main
+      document.getElementById("copy6").innerHTML =
+        document.getElementById("node6").nodeName;
+
+      // The nodeValue property specifies the value of a node.
+      /**
+       * nodeValue for element nodes is null
+            nodeValue for text nodes is the text itself
+            nodeValue for attribute nodes is the attribute value
+      */
+      document.getElementById("copy7").innerHTML =
+        document.getElementById("node7").nodeValue;
+
+        // nodeType
+      document.getElementById("copy8").innerHTML =
+        document.getElementById("node8").nodeType;
+        // nodeType
+      document.getElementById("copy8").innerHTML =
+        document.getElementById("node8").ATTRIBUTE_NODE;
+    </script>
+  </body>
+</html>
