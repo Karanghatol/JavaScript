@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- to select all node at once we use querySelectorAll() method -->
+
+    <p>paragraph 1</p>
+    <p>paragraph 2</p>
+    <p>paragraph 3</p>
+    <script>
+        let select = document.querySelectorAll('p');
+        for (let i = 0; i < select.length; i++) {
+            select[i].style.backgroundColor = "yellow";
+        }
+    </script>
+  </body>
+</html>
