@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <style>
+    body {
+      width: 600px;
+    }
+  </style>
+  <body>
+    JavaScript HTML DOM Elements (Nodes) : <br />
+
+    <h6>Creating New HTML Elements (Nodes)</h6>
+    <p id="demo1">this is paragraph one</p>
+    <p id="demo2">this is paragraph two</p>
+    <script>
+      let p1 = document.getElementById("demo1");
+      let p2 = document.getElementById("demo2");
+
+      //   creating new p element
+      let prnt = document.createElement("p");
+      // creating text node
+      let node = document.createTextNode("paragraph and text created by Node");
+      prnt.appendChild(node);
+      document.body.appendChild(prnt);
+    </script>
+    <hr />
+    <br /><br />
+
+    Creating new HTML Elements - insertBefore() :
+    <div id="main1">
+      <p id="demo3">this is paragraph three</p>
+      <p id="demo4">this is paragraph four</p>
+    </div>
+    <script>
+      let newelem = document.createElement("section");
+      let text = document.createTextNode("this is text of section");
+      newelem.appendChild(text);
+
+      let div1 = document.getElementById("main1");
+      let old_elem = document.getElementById("demo4");
+      div1.insertBefore(newelem, old_elem);
+    </script>
+    <hr />
+    <br /><br />
+
+    Removing Existing HTML Elements :
+    <p>To remove an HTML element, use the remove() method:</p>
+    <strike>this is removed -__-></strike>
+    <h4 id="blank">this node will be removed</h4>
+    <script>
+      let rmnode = document.getElementById("blank");
+      rmnode.remove();
+    </script>
+    <hr />
+    <br /><br />
+
+    Removing a Child Node :
+    <h5>using removeChild() method</h5>
+    <script>
+      // first create new element (parent)
+      let elem1 = document.createElement("p");
+      // setting id demo5 to elem1
+      elem1.setAttribute("id", "demo5");
+      document.body.appendChild(elem1);
+      let txt = document.createTextNode("this is demo5 p element");
+      elem1.appendChild(txt);
+      // creating child node
+      let elem2 = document.createElement("p");
+      elem2.setAttribute("id", "demo6");
+      let txt2 = document.createTextNode("this is demo6 p element");
+      elem2.appendChild(txt2);
+      elem1.appendChild(elem2);
+
+      elem1.removeChild(elem2);
+    </script>
+    <hr />
+
+    Replacing HTML Elements : using replaceChild() method
+    <div id="main2">
+      p7 :
+      <p id="demo7"></p>
+      p8 :
+      <p id="demo8">demo 8 paragraph</p>
+    </div>
+    <script>
+      let parent1 = document.getElementById("main2");
+      let fchild = document.getElementById("demo7");
+      let schild = document.getElementById("demo8");
+      parent1.replaceChild(schild, fchild);
+      // replaceChildren  to rplace all nodes of parent
+    </script>
+    <hr>
+  </body>
+</html>
