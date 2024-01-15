@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <pre>
+    The Browser Object Model (BOM) allows JavaScript to "talk to" the browser.
+
+    The Browser Object Model (BOM) : 
+    There are no official standards for the Browser Object Model (BOM).
+    <br />
+
+    The window object is supported by all browsers. It represents the browser's
+    window.
+    <br>
+    <hr>
+    
+    Window Size
+Two properties can be used to determine the size of the browser window.
+
+Both properties return the sizes in pixels:
+
+window.innerHeight - the inner height of the browser window (in pixels)
+window.innerWidth - the inner width of the browser window (in pixels).
+
+</pre>
+    <hr />
+    <h3 id="head"></h3>
+    <script>
+      let heading = (document.getElementById("head").innerHTML =
+        "hello window");
+
+      // same as
+      window.document.getElementById("head").style.color = "red";
+
+      // lets check windows height and width;
+      let h = window.innerHeight;
+      let w = window.innerWidth;
+
+      if (h >= 400 && w >= 20) {
+        window.resizeTo(400, 100);
+        alert("size small");
+      } else {
+        alert("size OK");
+      }
+
+      /*
+        Some other methods:
+
+        window.open() - open a new window
+        window.close() - close the current window
+        window.moveTo() - move the current window
+        window.resizeTo() - resize the current window
+*/
+    </script>
+  </body>
+</html>
