@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    JavaScript Window History :
+    <pre>
+    The window.history object contains the browsers history. 
+
+    it can be written without and with window. object.
+
+    Some methods:--------
+
+    history.back() - same as clicking back in the browser
+    history.forward() - same as clicking forward in the browser
+    history.go() - his method is used to move the browser to a specific page in the session history. 
+    
+    history.pushState(state, title, url) - This method adds a new entry to the session history. 
+    It takes three parameters: 
+    state (a JavaScript object representing the state associated with the new history entry), 
+    title (not widely used and often set to an empty string), and url (the new URL).
+
+    history.replaceState(state, title, url):
+    This method modifies the current entry in the session history without creating a new one. 
+    It takes the same parameters as pushState.
+    </pre>
+    <button type="submit" onclick="goback()">Go Back</button>
+    <button type="submit" onclick="goforward()">Go forward</button>
+    <button type="submit" onclick="addHistoryEntry()">addHistoryEntry</button>
+    <script>
+      // go back page
+      function goback() {
+        document.write(window.history.back());
+      }
+
+      // go forward page
+      function goforward() {
+        document.write(window.history.forward());
+      }
+
+      // go forward by given number as page
+      function goforback() {
+        document.write(window.history.go(3));
+        // backward
+        document.write(window.history.go(-3));
+      }
+
+      function addHistoryEntry() {
+        const state = { page: 1 };
+        const title = "";
+        const url = "/page1";
+
+        window.history.pushState(state, title, url);
+      }
+
+      function replaceHistoryState() {
+  const state = { page: 2 };
+  const title = "";
+  const url = "/page2";
+
+  window.history.replaceState(state, title, url);
+}
+    </script>
+  </body>
+</html>
