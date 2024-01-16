@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    JavaScript Window Navigator :
+    <pre>
+        The window.navigator object contains information about the visitor's browser.
+
+        The window.navigator object can be written without the window prefix.
+    </pre>
+
+    <script>
+      /**
+         * Properties:
+
+    navigator.userAgent:
+    Returns a string representing the user-agent header of the browser.
+
+    ***********Warning************
+The information from the navigator object can often be misleading.
+        */
+      const userAgent = window.navigator.userAgent;
+      document.write("userAgent : " + userAgent + " <br />");
+
+      /**
+       * navigator.platform:
+    Returns a string representing the platform of the browser 
+    (e.g., "Win32" for Windows, "MacIntel" for Mac).
+      */
+      const platform = window.navigator.platform;
+      document.write("platform : " + platform + " <br />");
+
+      /* navigator.language:
+    Returns a string representing the language of the browser.*/
+      const language = window.navigator.language;
+      document.write("language : " + language + " <br />");
+
+      /**
+       * navigator.cookieEnabled:
+    Returns a boolean indicating whether the browser has cookies enabled.
+      */
+      const cookiesEnabled = window.navigator.cookieEnabled;
+      document.write("cookiesEnabled : " + cookiesEnabled + " <br />");
+
+      /*navigator.onLine:
+    Returns a boolean indicating whether the browser is currently online.*/
+      const isOnline = window.navigator.onLine;
+      document.write("isOnline : " + isOnline + " <br />");
+
+      /**
+       * The appName property returns the application name of the browser: */
+      const appName = window.navigator.appName;
+      document.write("appName : " + appName + " <br />");
+
+      /**
+       * The appCodeName property returns the application code name of the browser:
+       *
+       * ****This property is removed (deprecated) in the latest web standard.
+       */
+      const appCodeName = window.navigator.appCodeName;
+      document.write("appCodeName : " + appCodeName + " <br />");
+      // o/p = Mozilla : Do not rely on it! "Mozilla" is the application code name for Chrome,
+      // Firefox, IE, Safari, and Opera.
+
+      /**
+       * The product property returns the product name of the browser engine:
+       * 
+       * 
+       * ******This property is removed (deprecated) in the latest web standard.
+
+            Most browsers returns Gecko as product.
+      */
+      const product = window.navigator.product;
+      document.write("product : " + product + " <br />");
+
+      /*
+       * The appVersion property returns version information about the browser:
+       */
+       const appVersion = window.navigator.appVersion;
+      document.write("appVersion : " + appVersion + " <br />");
+    </script>
+    <hr />
+    here are methods of navigator : <br>
+    <script>
+      /**
+       * javaEabled() return true if java is enabled
+      */
+     const javaEnabled = window.navigator.javaEnabled();
+      document.write("javaEabled : " + javaEnabled + " <br />");
+
+    </script>
+  </body>
+</html>
