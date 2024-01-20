@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <pre>
+        Cookies let you store user information in browser
+
+        What are Cookies?
+Cookies are data, stored in small text files, on your computer.
+
+Cookies are invented to "how to remember information of user"
+
+When a user visits a web page, user's name can be stored in a cookie.
+Next time the user visits the page, the cookie "remembers" user's name.
+
+<h2>cookies are stored in name-value pairs</h2>
+<b><i>e.g.: username = karan</i></b>
+    </pre>
+    <hr />
+    javascript can <b>create, read and delete cookie</b> using
+    <b>document.cookie</b>
+    method cookie can be created like this. cookies are seprated by ;
+    (semicolon)
+
+    <script>
+      document.write(document.cookie);
+      let cook = (document.cookie = "username = karanghatol");
+      cook = document.cookie = "username2 = arjunghatol";
+      document.write(cook);
+
+      // add cookies
+      //   let key = prompt("enter your key");
+      //   let value = prompt("enter your value");
+      //   document.write(`your key : ${key} , value : ${value}`);
+    </script>
+
+    <hr />
+    we are using the encodeURIComponent() function to endoce the symbols
+    <br />
+    <script>
+      //   let key = prompt("enter your key");
+      //   let value = prompt("enter your value");
+      /* document.write(
+        `your key : ${encodeURIComponent(key)} , value : ${encodeURIComponent(
+          value
+        )}`
+      );
+
+    //   max amount of cookies are 20
+
+      document.write("let me decode it \n");
+      document.write(
+        " key : " +
+        // limit is 4kb
+          decodeURIComponent("%25%23%40%20%25%40%23") +
+          " value : " +
+          decodeURIComponent('03433%3B%3B')
+      );
+      */
+    </script>
+
+    <pre>
+        we can also add an expiry date (in UTC time). 
+        By default, the cookie is deleted when the browser is closed:
+    </pre>
+    <script>
+      let cook2 = (document.cookie =
+        "username=John Doe; expires=Thu, 21 Jan 2024 12:00:00 UTC");
+      document.write(cook2);
+
+      // With a path parameter, you can tell the browser what path the cookie belongs to.
+      // By default, the cookie belongs to the current page.
+
+      // the path is actually page.
+      let cook3 = (document.cookie =
+        "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/");
+      document.write(cook3);
+
+      //   for delete cookie just remove value
+    </script>
+    <hr />
+    setting cookie
+    <script>
+      function setCookie(cname, cvalue, exdays) {
+        // Create a new Date object representing the current date and time
+        const d = new Date();
+
+        // Calculate the expiration time by adding the specified number of days in milliseconds
+        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+
+        // Convert the expiration date to a UTC string
+        let expires = "expires=" + d.toUTCString();
+
+        // Set the cookie with the provided name, value, expiration, and path
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+    </script>
+
+    <pre>
+      Explanation of each part:
+
+  <b>const d = new Date();: </b> Creates a new Date object representing the current date and time.
+      
+  <b>d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));: </b> 
+  Calculates the expiration time for the cookie by adding the specified 
+  number of days (exdays) in milliseconds to the current time. 
+  This is done to set an expiration date for the cookie.
+      
+  <b>let expires = "expires=" + d.toUTCString();: </b> 
+  Converts the calculated expiration date (d) to a UTC string 
+  format and stores it in the expires variable. The expires string will 
+  be added to the cookie to indicate its expiration time.
+      
+  <b>document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";: </b> 
+  Sets the cookie using the document.cookie property. 
+  The cookie is formed by concatenating the name (cname), 
+  value (cvalue), expiration (expires), and the path (path=/). 
+  The cookie is then stored in the browser.
+    </pre>
+    <hr />
+    function for geting cookie
+
+    <script>
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+    </script>
+  </body>
+</html>
