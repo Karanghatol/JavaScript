@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>API - Aplication Programming Interface</h1>
+    It can extend the functionality of the browser It can greatly simplify
+    complex functions It can provide easy syntax to complex code
+
+    <p>
+      All browsers have a set of built-in Web APIs to support complex
+      operations, and to help accessing data. For example, the Geolocation API
+      can return the coordinates of where the browser is located.
+    </p>
+    <hr />
+    <pre>
+        Get the latitude and longitude of the user's position:
+    </pre>
+
+    <p id="demo"></p>
+    <button onclick="getLocation()">try longi/latti tude</button>
+    <script>
+      const x = document.getElementById("demo");
+
+      function getLocation() {
+        try {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } catch {
+          x.innerHTML = err;
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude;
+      }
+    </script>
+
+    <pre>
+        Third Party APIs
+        Third party APIs are not built into your browser.
+
+        To use these APIs, you will have to download the code from the Web.
+
+        Examples:
+
+        YouTube API - Allows you to display videos on a web site.
+        Facebook API - Allows you to display Facebook info on a web site.
+    </pre>
+
+  </body>
+</html>
