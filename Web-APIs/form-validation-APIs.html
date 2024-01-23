@@ -1,0 +1,89 @@
+<!--
+* Constraint Validation DOM Methods
+____Property________|_____________Description____________________________________
+checkValidity()	    | Returns true if an input element contains valid data.
+setCustomValidity()	|  Sets the validationMessage property of an input element.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      name=""
+      id="input"
+      minlength="5"
+      maxlength="20"
+      required
+    />
+    <button id="btn">button</button>
+    <script>
+      let inpt = document.getElementById("input");
+      let btn = document.getElementById("btn");
+
+      btn.addEventListener("click", () => {
+        if (!inpt.checkValidity()) {
+          // Please lengthen this text to 5 characters or more (you are currently using 2 characters).
+          document.body.innerHTML = inpt.validationMessage;
+
+          // [object ValidityState]Contains the message a browser will display when the validity is false.
+          document.body.innerHTML = inpt.validity;
+
+          // true : 	Indicates if an input element will be validated.
+          document.body.innerHTML = inpt.willValidate;
+        } else {
+          alert(inpt.value);
+        }
+      });
+    </script>
+    <!-- validationMessage checkValidity -->
+  </body>
+</html>
+
+<!--
+HERE ARE SOME VALIDATION PROPERTIES: 
+
+Validity Properties
+The validity property of an input element contains a number of properties related to the validity of data:
+______________________________________________________________________________________________________
+Property	      |      Description                                                                  |
+------------------|-----------------------------------------------------------------------------------|
+customError	      |      Set to true, if a custom validity message is set.                            |
+------------------------------------------------------------------------------------------------------|
+patternMismatch	  |      Set to true, if an element's value does not match its pattern attribute.     |
+------------------------------------------------------------------------------------------------------|
+rangeOverflow	  |      Set to true, if an element's value is greater than its max attribute.        |
+------------------------------------------------------------------------------------------------------|
+rangeUnderflow	  |      Set to true, if an element's value is less than its min attribute.           |
+------------------------------------------------------------------------------------------------------|
+stepMismatch	  |      Set to true, if an element's value is invalid per its step attribute.        |
+------------------------------------------------------------------------------------------------------|
+tooLong	          |      Set to true, if an element's value exceeds its maxLength attribute.          |
+------------------------------------------------------------------------------------------------------|
+typeMismatch	  |      Set to true, if an element's value is invalid per its type attribute.        |
+------------------------------------------------------------------------------------------------------|
+valueMissing	  |      Set to true, if an element (with a required attribute) has no value.         |
+------------------------------------------------------------------------------------------------------|
+valid	          |      Set to true, if an element's value is valid.                                 |
+------------------------------------------------------------------------------------------------------|
+
+EX: 
+
+<input id="id1" type="number" min="100">
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let text = "Value OK";
+  if (document.getElementById("id1").validity.rangeUnderflow) {
+    text = "Value too small";
+  }
+}
+-->
