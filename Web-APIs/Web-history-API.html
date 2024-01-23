@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    the web history API provides a easy access to window.history object. The
+    window.history object contains the URLs (Web Sites) visited by the user.
+
+    <button onclick="myFunction()">Go Back 2 Pages</button>
+    1) backward 2) forward 3) go 4) length
+    <script>
+      function myFunction() {
+        window.history.go(-2);
+      }
+    </script>
+  </body>
 </html>
