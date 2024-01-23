@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    The Web Storage API is a simple syntax for storing and retrieving data in
+    the browser. It is very easy to use: setitem, getitem
+    <hr />
+    <script>
+      localStorage.setItem("name", "karan ghatol");
+      document.write(localStorage.getItem("name"));
+    </script>
+
+    the localStorage is an object that provides local storage to particular
+    website.
+    <br />
+    <b>
+      It allows you to store, read, add, modify, and delete data items for that
+      domain.
+    </b>
+    The data is stored with no expiration date, and will not be deleted when the
+    browser is closed.
+
+    <hr />
+    The localStorage.setItem() method stores a data item in a storage. It takes
+    a <b>name</b> and a <b>value</b> as parameters.
+    <hr />
+    localStorage.getItem() method retrieves a data item from the storage. It
+    takes a name as parameter.
+    <hr />
+    The sessionStorage object is identical to the localStorage object. The
+    difference is that the sessionStorage object stores data for one session.
+    The data is deleted when the browser is closed.
+    <script>
+      sessionStorage.setItem("name2", "arjun ghatol");
+      document.write("<br>" + sessionStorage.getItem("name2") + "<br>");
+    </script>
+
+    <!-- 
+        Storage Object Properties and Methods:
+_________________________________________________________________________________________________________
+Property/Method	            |             Description
+----------------------------|------------------------------------------------------------------------
+key(n)	                    |   Returns the name of the nth key in the storage
+length	                    |   Returns the number of data items stored in the Storage object
+getItem(keyname)	        |   Returns the value of the specified key name
+setItem(keyname, value)	    |   Adds a key to the s torage, or updates a key value (if it already exists)
+removeItem(keyname)	        |   Removes that key from the storage
+clear()	                    |   Empty all key out of the storage
+----------------------------|-----------------------------------------------------------------------------
+     -->
+
+    <!-- 
+        Related Pages for Web Storage API
+        
+Property	                          Description
+window.localStorage	       Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+window.sessionStorage	   Allows to save key/value pairs in a web browser. Stores the data for one session
+      -->
+  </body>
+</html>
