@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>: what is web workers -</h1>
+    <h3>
+      web worker is a JavaScript running in the background. without affecting a
+      page
+    </h3>
+    <p>
+      when executing the html page. the page is unresponsive until the script is
+      finished
+    </p>
+    <hr />
+    lets see an example of web workers :
+    <h2>JavaScript Web Workers API</h2>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+
+    <script>
+      let w;
+
+      function startWorker() {
+        if (typeof w == "undefined") {
+          w = new Worker("workers.js");
+        }
+        w.onmessage = function (event) {
+          document.getElementById("result").innerHTML = event.data;
+        };
+      }
+
+      function stopWorker() {
+        w.terminate();
+        w = undefined;
+      }
+    </script>
+  </body>
+</html>
