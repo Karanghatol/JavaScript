@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+    the geolocation api is used to get the geographial position of the user.
+    Since this can compromise privacy, the position is not available unless the
+    user approves it.
+
+
+    Note : 
+Geolocation is most accurate for devices with GPS, like smartphones.
+
+only work on secure contexts such as HTTPS.
+
+If your site is hosted on a non-secure origin 
+(such as HTTP) the requests to get the users location will no longer function.
+</pre
+    >
+    <hr />
+
+    <h3>lets use the geolocation api</h3>
+    <p>
+      to return the userd position, the getCurrentPosition() method is used.
+    </p>
+    <br />
+    <p id="demo"></p>
+    <button onclick="getlocation()">button</button>
+    <script>
+      var demo = document.getElementById("demo");
+
+      function getlocation() {
+        // first we check that geolocation is supported or not.
+        if (navigator.geolocation) {
+          // yes!. then run the getCurrentPosition() method. take's 2 parameters
+        //   watchPosition()
+          navigator.geolocation.getCurrentPosition(showPosition, showerror); // showposition is a function
+        } else {
+          // no. then display a negative message.
+          demo.innerHTML = "not supported by browser";
+        }
+
+        // The showPosition() function outputs the Latitude and Longitude
+        function showPosition(position) {
+          demo.innerHTML =
+            "Latitude : " +
+            position.coords.latitude +
+            "<br>" +
+            "Longitude : " +
+            position.coords.longitude;
+          // coords.latitude..etc. are a properties.
+
+          let latlon =
+            position.coords.latitude + "," + position.coords.longitude;
+
+          let img_url =
+            "https://maps.googleapis.com/maps/api/staticmap?center=" +
+            latlon +
+            "&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+
+          document.getElementById("output").innerHTML =
+            "<img src='" + img_url + "'>";
+        }
+      }
+    </script>
+    <hr />
+    <h3>lets handle errors :</h3>
+    <p id="demo2" style="color: brown"></p>
+    <br />
+    <script>
+      function showerror(error) {
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            demo2.innerHTML = "ERROR : permission denied";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            demo2.innerHTML = "ERROR : position unavailable";
+            break;
+          case error.TIMEOUT:
+            demo2.innerHTML = "ERROR : timeout";
+            break;
+          case error.UNKNOWN_ERROR:
+            demo2.innerHTML = "ERROR : unknown error";
+            break;
+        }
+      }
+    </script>
+    <!-- 
+        
+Property	            Returns
+coords.latitude	          The latitude as a decimal number (always returned)
+coords.longitude	      The longitude as a decimal number (always returned)
+coords.accuracy	          The accuracy of position (always returned)
+coords.altitude	          The altitude in meters above the mean sea level (returned if available)
+coords.altitudeAccuracy   The altitude accuracy of position (returned if available)
+coords.heading	          The heading as degrees clockwise from North (returned if available)
+coords.speed	          The speed in meters per second (returned if available)
+timestamp	              The date/time of the response (returned if available)
+
+     -->
+    <hr />
+    <h3>lets display a result on map :</h3>
+    <img src="" id="output" />
+    <br />
+    <hr />
+    <pre>
+    The Geolocation object also has other interesting methods:
+
+    <b>watchPosition()</b> -
+    Returns the current position of the user and continues to return updated
+    position as the user moves (like the GPS in a car). 
+
+    <b>clearWatch()</b> - Stops the <b>watchPosition()</b> method.
+    </pre>
+  </body>
+</html>
