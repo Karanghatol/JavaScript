@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        <h2>AJAX : (Asynchronous Javascript And XML)</h2>
+        AJAX is a developer's dream, because you can:
+
+Read data from a web server - after the page has loaded
+Update a web page without reloading the page
+Send data to a web server - in the background
+    </pre>
+    <hr />
+    lets see an example : <br />
+
+    <main id="main">
+      <h2>XMLHttpRequest object</h2>
+      <button onclick="loadDoc()">button</button>
+    </main>
+
+    <script>
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = () => {
+          document.getElementById("main").innerHTML = this.responseText;
+        };
+        xhttp.open("GET", "intro.txt", true);
+        xhttp.send();
+      }
+    </script>
+    AJAX just uses a combination of:
+
+A browser built-in XMLHttpRequest object (to request data from a web server)
+JavaScript and HTML DOM (to display or use the data)
+  </body>
+</html>
