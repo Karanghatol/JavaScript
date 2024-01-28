@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        JSON.parse() is used to exchange data from/to web server.
+
+        The data is always string.
+        
+        using this function/object data becomes javascript object.
+    </pre>
+
+    lets see an example :
+    <script>
+      let obj = JSON.parse(`{"name":"karan", "age":20}`);
+      document.write("name : " + obj.name + ", age : " + obj.age);
+    </script>
+    <br />
+    <hr />
+    array as a json :
+    <script>
+      const obje = JSON.parse('["ram", "shyam", "krishna"]');
+      for (const i of obje) {
+        document.write(i + ", ");
+      }
+    </script>
+    <br />
+    <hr />
+
+    parsing the date :
+    <p>
+      Date objects are not allowed in JSON. If you need to include a date, write
+      it as a string. You can convert it back into a date object later: <br />
+      like this <br />
+      <code> x.date = new Date(x.date); </code><br />
+    </p>
+
+    <script>
+      var x = JSON.parse(`{"date":"2004-8-27"}`);
+      x.date = new Date(x.date);
+      document.write(x.date);
+    </script>
+    <br /><br />
+    or we can use second parameter : <br /><br />
+    <script>
+      let y = JSON.parse(`{"date":"2004-8-27"}`, function date(k, v) {
+        if (k == "date") {
+          return new Date(v);
+        } else {
+          return v;
+        }
+      });
+      document.write(y.date);
+    </script>
+    <br />
+    <hr />
+    <br />
+    Parsing functions : <br />
+    * functions are not allowe in json, <br />
+    * if you want to include functions , write it as a string, <br />
+    we can convert back into a function.
+    <br />
+    <script>
+      let z = JSON.parse(
+        `{"greet":"function() { return '<b>hello brother... this text is from json funtion</b>'; }"}`
+      );
+      z.greet = eval("(" + z.greet + ")");
+      document.write(z.greet());
+    </script>
+    <p style="color: red;background-color: yellow;">
+      we have to avoid using functions in JSON, the functions will lose their scope,
+      and you would have to use eval() to convert them back into functions.
+    </p>
+  </body>
+</html>
