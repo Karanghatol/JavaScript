@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stringify the js objects</title>
+  </head>
+  <body>
+    <p>
+      When sending data to a web server, the data has to be a string. Convert a
+      JavaScript object into a string with JSON.stringify()
+    </p>
+    <br />
+    example :
+    <script>
+      let obj = {
+        name: "karan",
+        age: 20,
+      };
+
+      let jsobj = JSON.stringify(obj);
+      document.write(jsobj);
+    </script>
+    <br />
+    stringifying the array :
+    <br />
+    <script>
+      let arr = ["karan", "arjun", "ram"];
+      let jsarr = JSON.stringify(arr);
+      document.write(jsarr);
+    </script>
+    <br />
+    <hr />
+    <p>
+      <i
+        ><b
+          ><u
+            >Storing Data When storing data, the data has to be a certain
+            format, and regardless of where you choose to store it, text is
+            always one of the legal formats. JSON makes it possible to store
+            JavaScript objects as text.</u
+          ></b
+        ></i
+      >
+    </p>
+    <script>
+      const x = {
+        a: "abc",
+        b: "def",
+        c: true,
+        d: 20.02,
+      };
+
+      let string = JSON.stringify(x);
+      localStorage.setItem("testing", string);
+
+      let text = localStorage.getItem("testing");
+      let par = JSON.parse(text);
+      document.write("a: " + par.a + "<br />");
+      document.write("b: " + par.b + "<br />");
+      document.write("c: " + par.c + "<br />");
+      document.write("d: " + par.d + "<br />");
+    </script>
+  </body>
+</html>
