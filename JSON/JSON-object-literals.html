@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      * Keys and values are separated by a colon. * Keys must be strings, and
+      value smust be a valid JSON data type:
+    </p>
+    <br />
+    <script>
+      let a = {
+        name: "karan",
+        age: 20,
+        student: true,
+      };
+      let a2 = JSON.stringify(a);
+      // after stringifying  =
+      /**
+       * {
+       *  "name":"karan",
+       *  "age":20,
+       *  "student":true
+       * }
+       */
+      console.log(a2);
+    </script>
+    <br />
+    <pre style="color: blue; background-color: yellow">
+      * It is a common mistake to call a JSON object literal "a JSON object". 
+      * JSON cannot be an object. JSON is a string format. 
+      * The data is only JSON when it is in a string format. 
+      * When it is converted to a JavaScript variable, it becomes a JavaScript object.
+    </pre>
+    <br />
+    <hr />
+    <script>
+      let obj = '{"name":"karan","age":20}';
+      let o = JSON.parse(obj);
+      document.write(o.name + "<br />");
+      //   using angular bracets
+      document.write(o["age"]);
+      </script>
+    <br />
+    <hr />
+    <p>looping the object :</p>
+    <br />
+    <script>
+        let text = "";
+        for (const k in o) {
+            text += k + ", "; // key
+            text += o[k] + ", "; // value
+        }
+        document.write(text);
+    </script>
+  </body>
+</html>
