@@ -61,5 +61,49 @@
       document.write("c: " + par.c + "<br />");
       document.write("d: " + par.d + "<br />");
     </script>
+    <br /><br />
+    stringifying the dates :
+    <br />
+    <script>
+      let date = {
+        today: new Date(),
+      };
+      let obj2 = JSON.stringify(date.today);
+      document.write(obj2);
+    </script>
+    <br />
+    <hr />
+    Stringifiying functions. :
+    <br />
+    <p>
+      Stringify Functions In JSON, functions are not allowed as object values.
+      The JSON.stringify() function will remove any functions from a JavaScript
+      object, both the key and the value:
+    </p>
+    <br />
+    <script>
+      var a = {
+        func: function () {
+          document.write("hello function...");
+        },
+      };
+      a.func();
+      // var a2 = JSON.stringify(a);
+    </script>
+    <br /><br />
+    <i>lets make it string</i><br />
+    <script>
+      // converting it into string.
+      const obj3 = {
+        name: "John",
+        age: function () {
+          return 30;
+        },
+        city: "New York",
+      };
+      obj3.age = obj3.age.toString();
+      const myJSON = JSON.stringify(obj3);
+      document.write(myJSON);
+    </script>
   </body>
 </html>
