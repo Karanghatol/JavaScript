@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // JSON array string
+      let arr = '["india","usa","russia","japan","israel"]';
+
+      // JSON string array literals
+      let obj = {
+        country: ["india", "russia", "israel"],
+      };
+
+      let str = JSON.stringify(obj);
+      let parsedObject = JSON.parse(str);
+
+      for (let i in parsedObject.country) {
+        let x = parsedObject.country[i];
+        document.write(x + ", ");
+      }
+    </script>
+  </body>
+</html>
