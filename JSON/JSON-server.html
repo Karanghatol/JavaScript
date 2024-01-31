@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    if we have data stored in js object we can send it by converting it into
+    json, and send it to server.
+    <br />
+    <button id="btn">Click the button</button>
+    <script>
+      let myobj = {
+        name: "karan",
+        roll: 14,
+        emp: "false",
+      };
+
+      let myjson = JSON.stringify(myobj);
+
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", function showData() {
+        window.location = "http://localhost/demo_php.php?data=" + myjson;
+      });
+    </script>
+  </body>
+</html>
