@@ -1,0 +1,12 @@
+[
+    {
+        "name": "karan ghatol",
+        "age": 20
+    },
+    {
+        "arr": ["Bharat", "Russia", "Japan"]
+    },
+    {
+        "arr2": [10, 20, 30]
+    }
+]
