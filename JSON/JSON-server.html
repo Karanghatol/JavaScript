@@ -24,5 +24,36 @@
         window.location = "http://localhost/demo_php.php?data=" + myjson;
       });
     </script>
+    <br />
+    <hr />
+    json from server : <br />
+    <script>
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        let myobj = JSON.parse(this.responseText);
+        // document.write(myobj.name);
+      };
+      xhr.open("GET", "json_demo.json");
+      xhr.send();
+    </script>
+    <br />
+    <hr />
+    array as a json : <br />
+    <script>
+      let xhr2 = new XMLHttpRequest();
+      // it behave different with => arrow function.
+      xhr2.onload = function () {
+        if (xhr2.status >= 200 && xhr2.status < 300) {
+          let obj = JSON.parse(this.responseText);
+          document.write(obj[1].arr.join("- ") + "<br />");
+          document.write(obj[2].arr2.join("- "));
+          console.log("everything is good");
+        } else {
+          console.error("bro error is found" + xhr2.status);
+        }
+      };
+      xhr2.open("GET", "json_demo.json", true);
+      xhr2.send();
+    </script>
   </body>
 </html>
