@@ -1,1 +1,7 @@
-{"student":true,"name":"karanghatol","class":"BCS","roll":14,"projects":null}
+{
+    "student": true,
+    "name": "karanghatol",
+    "class": "BCS",
+    "roll": 14,
+    "projects": null
+}
