@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js"></script>
+  <style>
+    body {
+      width: max-content;
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+      display: inline-block;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    output {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <p>Choose the currency from convert.</p>
+  <br />
+  <select name="select" id="select">
+    <option value="" id="opt0">--choose--</option>
+    <option value="usa" id="usa">USA</option>
+    <option value="euro" id="euro">Euro</option>
+    <option value="rupee" id="rupee">Rupee</option>
+  </select>
+  <p>Choose the currency to convert.</p>
+  <br />
+  <select name="select2" id="select2">
+    <option value="" id="opt10">--choose--</option>
+    <option value="usa" id="usa2">USA</option>
+    <option value="euro" id="euro2">Euro</option>
+    <option value="rupee" id="rupee2">Rupee</option>
+  </select>
+  <br>
+  <p>Enter value</p>
+  <input type="number" name="" id="num">
+  <br>
+  <button type="button" onclick="convert()">button</button>
+  <br>
+  <output id="output"></output>
+</body>
+</html>
